@@ -2,8 +2,14 @@ package org.brohede.marcus.listviewapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         String[] rawData = {"Leif", "Berit", "Börje"};
 
-        List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
+        List<String> listData = new ArrayList<String>(Arrays.asList(mountainNames));
+
 
         ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.list_item_textview,
                 R.id.my_item_textview, listData);
@@ -54,7 +61,14 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
 
-        adapter.add("Hilding");
-        adapter.add("Krusell");
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            String Krusell = new String("HEJ!");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), Krusell+position+mountainLocations[position], Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 }

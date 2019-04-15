@@ -7,11 +7,11 @@
     tools:context="org.brohede.marcus.listviewapp.MainActivity">
 
     <ListView
+        android:id="@+id/my_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/my_listview">
+    />
 
-    </ListView>
 
     <!-- You need to enter your components here -->
 
