@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private int[] mountainHeights ={4478,4808,6190};
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            String Krusell = new String("HEJ!");
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), Krusell+position+mountainLocations[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), mountainNames[position]+" Location:"+mountainLocations[position]+" Height:"+mountainHeights[position], Toast.LENGTH_SHORT).show();
             }
         });
 
