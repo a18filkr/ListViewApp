@@ -9,7 +9,7 @@ public class Mountain {
     public Mountain(){
         name = "Saknar namn";
         location = "Saknar plats";
-        height=1;
+        height=-1;
     }
 
     //En constructor som skapar ett nytt mountain
@@ -19,10 +19,16 @@ public class Mountain {
         height = h;
     }
 
+    public Mountain(String n){
+        name = n;
+        location = "nowhere";
+        height = -1;
+    }
+
     //Method att visa mountain med
     public String info(){
         String tmp = new String();
-        tmp+=name+" is located in mountain range "+location+" and reaches "+height+"m above sea level.";
+        tmp+="   "+name+"\n Location: "+location+"\n Height: "+height+"M";
         return tmp;
     }
 
@@ -31,6 +37,11 @@ public class Mountain {
     }
 
     public String getName(){
+        return name;
+    }
+
+    @Override
+    public String toString(){
         return name;
     }
 }
